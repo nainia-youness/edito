@@ -1,0 +1,40 @@
+-cree une fenetre 
+root=Tk()
+-afficher
+window.mainloop()
+-
+window.title("my application)
+-
+pour afficher un label
+l= Label(win,"dsqdqsdsq")
+l.pack() #l enpacketer dans la fenetre
+-
+label.pack(side=LEFT,expand=YES)#BOTTOM expend=center
+-
+cree une frame, une boite ou on place nos element
+frame=Frame(window)
+l= Label(frame,"dsqdqsdsq")
+l2= Label(frame,"dsdsqsqdqdqsdsq")
+frame.pack(expand=YES)
+-
+yt_button=Button(frame,text="dsqdqs")
+yt_button(pady=25,fill=X,command=function)#pady c padding
+-
+width=300
+height=300
+image=PhotoImage(file="password_onboarding.png").zoom(35).subsample(32)
+canvas=Canvas(window,width=width,heiht=height)
+canvas.create_image(width/2,height/2,image,db=0,heighlighticknes=0)#le centre
+canvas.pack()
+-
+frame=Frame(win,)
+-
+instead of pack use grid
+canvas.grid(row=0,column=0)
+canvas.grid(row=0,column=1)
+-
+-
+-
+-
+-
+-
