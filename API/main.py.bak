@@ -1,0 +1,12 @@
+import xmlrpc.client
+
+url = 'https://13.37.208.5'
+db = 'SLM_PROD_30_07'
+username = 'n.youness'
+password = '123456'
+
+common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
+common.version()
+
+uid = common.authenticate(db, username, password, {})
+print(uid)
