@@ -1,0 +1,54 @@
+ville,changement,changement
+Tanalt,Agence
+Oulad jerrar,ajouté
+Beni amer, j+1=>Mardi & Vendredi,agence
+Lmnassra, j+1 =>Lundi
+Ait Ali Tifni,ajouté
+Sebt ait rahou,Agence
+Tizounine,lundi & Jeudi=>Jeudi,Agence
+Douira,ajouté
+El hanchane,mardi&jeudi=>mardi,Agence
+Talmest,mardi& jeudi=>mercredi,Agence
+Had draa,mardi&jeudi=>mercredi,Agence
+Berakat radi,ajouté
+Ouazzane,rien
+Ouazzane,supprimé
+Msoun,rien
+Mokrisset,mardi&vendredi=>mardi,agence
+Deroua,mardi&vendredi=>Lundi & Mardi & Mercredi & Jeudi & Vendredi & Samedi,agence
+Lakhyayeta,mardi&vendredi=>Lundi & Mercredi & Vendredi ,agence
+Sidi hajjaj oued hassar,mardi&vendredi=>Lundi & Mardi & Mercredi & Jeudi & Vendredi & Samedi,agence
+Ouled saleh,mardi&vendredi=>Lundi & Mardi & Mercredi & Jeudi & Vendredi & Samedi,agence
+salé,j+1=>Lundi & Mardi & Mercredi & Jeudi & Vendredi & Samedi
+Témara,j+1=>Lundi & Mardi & Mercredi & Jeudi & Vendredi & Samedi
+Timoulay,lundi&maercredi&vendredi=>Lundi,agence
+Boughanim,ajouté
+Laouamra,lundi&mercredi&vendredi=>Mercredi,agence
+Sidi redouane,rien
+Laaouamera,lundi&mercredi&vendredi=>Mercredi,agence
+Outerbat,jeudi=>Mercredi,agence
+Temsamane,lundi&mercredi=>Lundi & Jeudi
+Sidi Slimane Echcharaa,ajouté
+Beni drar,j+1=>Vendredi,agence
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

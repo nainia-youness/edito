@@ -33,14 +33,17 @@ list_columns = ["Plaque d'immatriculation", "Agent", "Date de depart", "Date d'e
                 "Adresse", "Latitude", "Longitude", "Competence", "Agent privilegie", "Poids", "Volume",
                 "Référence de commande", "Hub", "Partner"]
 antsroute = pd.read_csv("C:/Users/aboulfath/Desktop/fichier_export.csv", sep=';', dtype="str", encoding="utf-8")
-
+#de ants
 #reference never used
 reference=pd.read_csv("C:/Users/aboulfath/Desktop/ES_Reference.csv",sep=';', dtype="str",encoding='ISO-8859-1')
 
+#planif vide avec columns list column
 planif = pd.DataFrame(columns=list_columns)
 #missing colmuns= columns we need to add to antsroute file
+#colonnes qu'on a dans planif mais pas dans antsroute
 missing_col = planif.columns.difference(antsroute.columns).tolist()
 #parasite columns= columns we need to remove from antsroute file
+#les colonnes qu'on a dans antsroute mais pas dans planif
 parasite_col = antsroute.columns.difference(planif.columns).tolist()
 
 # if we have both "Identifiant externe client" and "Identifiant externe"
@@ -52,6 +55,7 @@ if 'Identifiant externe client' in antsroute.columns:
 
 
 #change parasite_col ??????
+#les colonnes qu'on a dans planif mais pas dans antsroute
 parasite_col = planif.columns.difference(antsroute.columns).tolist()
 
 
