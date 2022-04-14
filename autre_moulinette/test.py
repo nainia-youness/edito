@@ -27,41 +27,15 @@ df_output = pd.DataFrame(data=d_output)
 # for ind in df.index:
 #    print(df['col1'][ind])
 
-num = 32548
 
-nbr_digits = len(str(num))
+temps_acheminements = pd.read_excel(
+    r"moulinettes/SLM/input/temps_d'acheminements.xlsx", dtype="str")
 
-result = str(num).zfill(6)
+date_visite = '30/03/2022'
 
-
-now = datetime.datetime.now()
-
-current_time = now.strftime("%H:%M")
-
-
-date = '15:00'
-hour = int(date[0:2])
-minute = int(date[3:5])
-
-
-def is_Heure_passage_prevu_valid(row):
-
-    hour = int(row[0:2])
-    minute = int(row[3:5])
-    now = datetime.datetime.now()
-    heure_passage = now.replace(minute=minute, hour=hour)
-    # calculer la diffrence entre now et heure_passage
-    dif = heure_passage-now
-    dif_days, dif_hours, dif_minutes = dif.days, dif.seconds // 3600, dif.seconds // 60 % 60
-    time_dif = now.replace(minute=dif_minutes, hour=dif_hours)
-    print(time_dif)
-    # constant min_dif
-    min_dif = now.replace(minute=5, hour=5)
-    #
-    if(time_dif > min_dif):
-        return False
-    else:
-        return True
-
-
-print(is_Heure_passage_prevu_valid('11:00'))
+d = datetime.date(int(date_visite[6:10]), int(date_visite[3:5]), int(
+    date_visite[0:2]))
+print(d+datetime.timedelta(1))
+print(d.weekday())
+# for i in temps_acheminements.index:
+#    print(temps_acheminements["Localisation associées"][i])

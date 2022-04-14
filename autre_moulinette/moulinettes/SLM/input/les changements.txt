@@ -32,23 +32,58 @@ Sidi Slimane Echcharaa,ajouté
 Beni drar,j+1=>Vendredi,agence
 
 
+-------------------------------------------------du tableau email
+Dakhla,rien
+Lagouira,change a j+3
+Mhiriz,change a j+3
+Aousserd,ajoute
+Laayoune Sud,rien
+Es semara,vendredi=>J+2
+Boujdour,mercredi=>j+2
+Tarfaya,lundi=>j+2
+El marsa,rien
+Akhfennir,lundi=>j+2
+Foum el oued,rien
+Aftissat,mercredi=>j+2
+Agti el ghazi,mercredi=>j+2
+Daoura,ajoute
+Errachidia,rien
+El Jorf,vendredi=>j+2
+Tinghir,lundi
+Tinejdad,lundi,vendredi
+Erfoud,vendredi
+Moulay ali chérif rissani,vendredi
+Alnif,vendredi
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Midelt,mardi,vendredi
+Aoufous,samedi
+Bni tadjite
+Bouanane	
+Boudnib	
+Er rich	
+Goulmima
+Gourramaa
+Talsint	
+Merzouga
+Melaab	
+Mellab
+Aarab sebbah gheris
+Essifa
+Er rteb
+M'daghra	
+Zaouiat sidi hamza	
+Ait aissa oubrahim
+Taghzout	
+Ferkla el oulia	
+Hassilabied	
+Tadighoust	
+Fezna	
+Ikniouen	
+Assoul	
+Ait hani	
+Ouaklim	
+M'ssici	
+Ksar touroug
 
 
 

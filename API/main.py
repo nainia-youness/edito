@@ -9,9 +9,9 @@ def save_as_json(element, file_name):
 
 
 url = 'http://13.37.208.5'
-db = 'SLM_PROD_30_07'
-username = 'n.youness'
-password = 'youness123'
+db = 'SLS_PROD_22_03'
+username = 'c.alouani@sapress-sochepress.ma'
+password = 'chaymaa123'
 
 common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
 common.version()
@@ -20,6 +20,7 @@ uid = common.authenticate(db, username, password, {})
 print("uid= "+str(uid))
 
 models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
+
 
 ########Liste les ids des destinataires (seulement les clients)########
 id_destinataires = models.execute_kw(
@@ -143,15 +144,15 @@ col = {
     "type_colis_id": 5
 }
 
-# id_colis_1 = models.execute_kw(db, uid, password, "sochepress.customer.request.line", "create", [
-#                               col])
-# id_colis_2 = models.execute_kw(db, uid, password, "sochepress.customer.request.line", "create", [
-#                               col])
+id_colis_1 = models.execute_kw(db, uid, password, "sochepress.customer.request.line", "create", [
+                               col])
+id_colis_2 = models.execute_kw(db, uid, password, "sochepress.customer.request.line", "create", [
+                               col])
 
-# id_demand = models.execute_kw(db, uid, password, "sochepress.customer.request", "create", [
-#                              {"name": "DEMAND", "customer_id": 28113, "request_line_ids": [id_colis_1, id_colis_2]}])
+id_demand = models.execute_kw(db, uid, password, "sochepress.customer.request", "create", [
+                              {"name": "DEMAND", "customer_id": 28113, "request_line_ids": [id_colis_1, id_colis_2]}])
 
-# print(id_demand)
+print(id_demand)
 
 ########get colis########
 
@@ -164,4 +165,4 @@ dict_infos = {
 
 p = models.execute_kw(db, uid,
                       password, "sochepress.customer.request", "get_colis", [dict_infos])
-print(p)
+# print(p)
