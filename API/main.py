@@ -23,31 +23,31 @@ models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
 
 
 ########Liste les ids des destinataires (seulement les clients)########
-id_destinataires = models.execute_kw(
-    db, uid, password, 'res.partner', 'search', [[['is_company', '=', True]]])
-# print(id_destinataires)
+#id_destinataires = models.execute_kw(
+#    db, uid, password, 'res.partner', 'search', [[['is_company', '=', True]]])
+#print(id_destinataires)
 
 ########get un client qui est une entreprise (pas un particulier)########
-id_client = models.execute_kw(db, uid, password,
-                              'res.partner', 'search', [
-                                  [['is_company', '=', True]]],
-                              {'limit': 1})
+#id_client = models.execute_kw(db, uid, password,
+#                              'res.partner', 'search', [
+#                                  [['is_company', '=', True]]],
+#                              {'limit': 1})
 # print(id_client)
 
-[record] = models.execute_kw(
-    db, uid, password, 'res.partner', 'read', [id_client])
+#[record] = models.execute_kw(
+#    db, uid, password, 'res.partner', 'read', [id_client])
 
 # print(record)
 # save_as_json(record, 'client.json')
 
 ########Rechercher et lire les clients########
 
-clients = models.execute_kw(db, uid, password,
-                            'res.partner', 'search_read',
-                            [[['is_company', '=', True]]],
-                            {'fields': ['name', 'country_id', 'comment'], 'limit': 5})
+#clients = models.execute_kw(db, uid, password,
+#                            'res.partner', 'search_read',
+#                           [[['is_company', '=', True]]],
+#                            {'fields': ['id','name', 'country_id', 'comment'], 'limit': 5})
 
-# print(clients)
+#print(clients)
 
 ########Créer un client:########
 
@@ -59,28 +59,28 @@ clients = models.execute_kw(db, uid, password,
 
 # methode 1
 
-id = models.execute_kw(
-    db, uid, password, "sochepress.customer.request", "get_list_colis", ["new"])
+#id = models.execute_kw(
+#    db, uid, password, "sochepress.customer.request", "get_list_colis", ["new"])
 
-print(id)
+#print(id)
 
 
 ########get tout les colis du user########
 
 # get les clients
-partner = models.execute_kw(db, uid, password, 'res.users', 'read', [
-                            uid], {'fields': ['partner_id']})
+#partner = models.execute_kw(db, uid, password, 'res.users', 'read', [
+#                            uid], {'fields': ['partner_id']})
 # get tout les id des contacts du utilisateur
-partner_id = partner[0]["partner_id"][0]
+#partner_id = partner[0]["partner_id"][0]
 
 
-to_print = {"fields": ['name', 'weight', 'expeditor_id', 'source_id',
-                       'destinator_id', 'destination_id', 'return_amount'], 'limit': 5}
+#to_print = {"fields": ['name', 'weight', 'expeditor_id', 'source_id',
+#                       'destinator_id', 'destination_id', 'return_amount'], 'limit': 5}
 
-colis = models.execute_kw(db, uid,
-                          password, "sochepress.customer.request.line", "search_read", [[["customer_id", "in", [partner_id]]]], to_print)
+#colis = models.execute_kw(db, uid,
+#                          password, "sochepress.customer.request.line", "search_read", [[["customer_id", "in", [partner_id]]]], to_print)
 
-print(colis)
+#print(colis)
 
 
 ########create destination########
@@ -103,38 +103,63 @@ dict_destinator = {"nom_destinataire": "destinateur Test creer par API", "rue": 
 ########create demande########
 
 # methode 1
-colis1 = {
-    "ref_externe": "0000001",
-    "type_colis": "normal",
-    "expediteur": "PLF NORD SLM",
-    "destinataire": "A070707",
-    "source": "Adresse warakpress",
-    "destination": "Kénitra",
-    "poids_colis": 213,
-    "methode_contre_remboursement": "Espèces",
-    "montant_contre_remboursement": 198.23
+
+a="""colis3={ 
+    "ref_ext" :"0011",
+    "type_colis": Type de colis,
+    "expediteur":Expéditeur,
+    "source": Source, 
+    "destinataire":Destinataire,     
+    "destination":Destination,
+    "modele": Modèle decolis,     
+    "poids_colis": Poids, 
+    "methode_contre_remboursement":Retour defonds,     
+    "montant_contre_remboursement": Montant,
 }
-colis2 = {
+
+demande={ 
+"customer_id" :"Customer ID",
+"type" : "Type" ,
+"date" : "Date",
+"colis" : colis3
+}"""
+b="""colis2 = {
     "ref_externe": "0000002",
-    "type_colis": "normal",
+    "type_colis": "Colis",
     "expediteur": "PLF NORD SLM",
-    "destinataire": "A070706",
+    "destinataire": 231347,
     "source": "Adresse warakpress",
     "destination": "Kénitra",
     "poids_colis": 213,
     "methode_contre_remboursement": "Espèces",
     "montant_contre_remboursement": 198.23
+}"""
+
+
+
+colis1 = {
+    "ref_ext": "0000001",
+    "type_colis": "Colis",
+    "expediteur": "yassine akroud",
+    "destinataire": 1239,
+    "source": "Marrakech",
+    "destination": "Kénitra",
+    "poids_colis": 213,
+    "methode_contre_remboursement": "Espèces",
+    "montant_contre_remboursement": 198.23
 }
+
 
 commande = {
-    "customer_id": 28113,
+    "customer_id": 1251,
     "type": "normal",
-    "colis": [colis1, colis2]
+    "colis": [colis1],
 }
 
-# id = models.execute_kw(
-#    db, uid, password, 'sochepress.customer.request', 'create_demand', [commande])
-# print(id)
+id = models.execute_kw(
+    db, uid, password, 'sochepress.customer.request', 'create_demand', [commande])
+print(id)
+
 
 # methode 2
 
@@ -144,15 +169,15 @@ col = {
     "type_colis_id": 5
 }
 
-id_colis_1 = models.execute_kw(db, uid, password, "sochepress.customer.request.line", "create", [
-                               col])
-id_colis_2 = models.execute_kw(db, uid, password, "sochepress.customer.request.line", "create", [
-                               col])
+#id_colis_1 = models.execute_kw(db, uid, password, "sochepress.customer.request.line", "create", [
+#                               col])
+#id_colis_2 = models.execute_kw(db, uid, password, "sochepress.customer.request.line", "create", [
+#                               col])
 
-id_demand = models.execute_kw(db, uid, password, "sochepress.customer.request", "create", [
-                              {"name": "DEMAND", "customer_id": 28113, "request_line_ids": [id_colis_1, id_colis_2]}])
+#id_demand = models.execute_kw(db, uid, password, "sochepress.customer.request", "create", [
+#                              {"name": "DEMAND", "customer_id": 28113, "request_line_ids": [id_colis_1, id_colis_2]}])
 
-print(id_demand)
+#print(id_demand)
 
 ########get colis########
 
@@ -163,6 +188,6 @@ dict_infos = {
 }
 
 
-p = models.execute_kw(db, uid,
-                      password, "sochepress.customer.request", "get_colis", [dict_infos])
+#p = models.execute_kw(db, uid,
+#                      password, "sochepress.customer.request", "get_colis", [dict_infos])
 # print(p)

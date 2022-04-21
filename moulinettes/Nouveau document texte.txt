@@ -1,0 +1,13 @@
+ <Fault 1: 'Traceback (most recent call last):\n  File "/opt/odoo13/odoo-server/odoo/addons/base/controllers/rpc.py", 
+line 69, in xmlrpc_2\n    response = self._xmlrpc(service)\n  File "/opt/odoo13/odoo-server/odoo/addons/base/controllers/rpc.py", 
+line 49, in _xmlrpc\n    result = dispatch_rpc(service, method, params)\n  File "/opt/odoo13/odoo-server/odoo/http.py", line 139, in dispatch_rpc\n   
+ result = dispatch(method, params)\n  File "/opt/odoo13/odoo-server/odoo/service/model.py", line 41, in dispatch\n    res = fn(db, uid, *params)\n  
+File "/opt/odoo13/odoo-server/odoo/service/model.py", line 174, in execute_kw\n    return execute(db, uid, obj, method, 
+*args, **kw or {})\n  File "/opt/odoo13/odoo-server/odoo/service/model.py", line 94, in wrapper\n    return f(dbname, *args, **kwargs)\n  
+File "/opt/odoo13/odoo-server/odoo/service/model.py", line 181, in execute\n    res = execute_cr(cr, uid, obj, method, *args, **kw)\n  
+File "/opt/odoo13/odoo-server/odoo/service/model.py", line 165, in execute_cr\n    result = odoo.api.call_kw(recs, method, args, kw)\n  
+File "/opt/odoo13/odoo-server/odoo/api.py", line 383, in call_kw\n    result = _call_kw_model(method, model, args, kwargs)\n  
+File "/opt/odoo13/odoo-server/odoo/api.py", line 356, in _call_kw_model\n    result = method(recs, *args, **kwargs)\n  
+File "/opt/odoo13/custom/addons/sochepress_webservice/models/models.py", line 194, in create_demand\n    expeditor_id = self.existing_partner(expeditor_name) or partner\n  
+File "/opt/odoo13/custom/addons/sochepress_webservice/models/models.py", line 15, in existing_partner\n    
+partners = [req.env.user.partner_id.id]\nNameError: name \'req\' is not defined\n'>
