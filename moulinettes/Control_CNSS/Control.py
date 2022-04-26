@@ -66,17 +66,14 @@ def is_hub_valid(index,row):
 
 def remove_column_prenom(planif):
     if 'Prenom' in planif.columns:
-        return planif.drop(columns=['Prenom'])
-
-#def remove_first_row(planif):
-#    return planif.drop([0])        
+        planif['Prenom']=''
 
 def ajouter_zeros_a_id_externe(index,row):
     if(len(row["Identifiant externe"]) != 6):
         row['Identifiant externe']=row['Identifiant externe'].zfill(6)
 
 
-planif=remove_column_prenom(planif)
+remove_column_prenom(planif)
 for index, row in planif.iterrows():
     if(not is_hub_valid(index,row)):
         continue
